@@ -224,7 +224,7 @@
     },
 
     // Container is injected into this element
-    parentEl: "body",
+    parenTel :  "body",
 
     // Focus handling
     // ==============
@@ -276,7 +276,7 @@
     thumbs: {
       autoStart: false, // Display thumbnails on opening
       hideOnClose: true, // Hide thumbnail grid when closing animation starts
-      parentEl: ".fancybox-container", // Container is injected into this element
+      parenTel :  ".fancybox-container", // Container is injected into this element
       axis: "y", // Vertical (y) or horizontal (x) scrolling
     },
 
@@ -4860,7 +4860,7 @@
       thumbs: {
         autoStart: false, // Display thumbnails on opening
         hideOnClose: true, // Hide thumbnail grid when closing animation starts
-        parentEl: ".fancybox-container", // Container is injected into this element
+        parenTel :  ".fancybox-container", // Container is injected into this element
         axis: "y", // Vertical (y) or horizontal (x) scrolling
       },
     },

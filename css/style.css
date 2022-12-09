@@ -2687,10 +2687,10 @@ img {
 
 .fluid-section-one .image-column {
   position: absolute;
-  right: 0px;
+  right: 80px;
   top: 0px;
-  width: 50%;
-  height: 100%;
+  width: 45%;
+  height: 741px;
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: right bottom;
@@ -5261,10 +5261,11 @@ img {
 
 .services-block-three .inner-box .lower-content .text {
   position: relative;
-  color: #7c7b7b;
+  color: black;
   font-size: 18px;
   line-height: 1.6em;
   margin-bottom: 30px;
+  text-shadow: 15px;
 }
 
 .services-block-three .inner-box .lower-content .icon-box {
@@ -6115,7 +6116,7 @@ img {
 
 .window-nav-outer .window-nav {
   position: relative;
-  padding: 0px 50px;
+  padding: 0px 30px;
   border-radius: 0px 0px 50px 50px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
 }
@@ -6123,7 +6124,7 @@ img {
 .window-nav-outer .window-nav li {
   position: relative;
   float: left;
-  width: 33.2%;
+  width: 20%;
   text-align: center;
 }
 
@@ -6967,10 +6968,12 @@ img {
 
 .window-block-two .inner-box .text {
   position: relative;
-  color: #7c7b7b;
+  color: black;
   font-size: 18px;
   line-height: 1.5em;
   margin-bottom: 15px;
+  text-align: justify;
+  text-shadow: 15px;
 }
 
 .window-block-two .inner-box .explore {
@@ -6989,6 +6992,55 @@ img {
   position: relative;
   top: 2px;
   margin-left: 8px;
+}
+
+
+.popup {
+  width: 400px;
+  background: #10FF55;
+  border-radius: 6px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(1);
+}
+
+.popup img{
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup button {
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: #fff;
+  color: #101812;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 /*** 
