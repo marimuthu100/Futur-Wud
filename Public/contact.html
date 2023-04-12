@@ -420,24 +420,24 @@
 						<div class="contact-form">
 							<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
 					onload="if(submitted)  {window.location.reload}"></iframe>
-							<form method="post" action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSdT_JuSLk5w0Ec-jduunibOjmvNPKYLVSdX10yXrqld7FHY5g/formResponse" id="contact-form" target="hidden_iframe">
+							<form id="contact_form" method="post" action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSdT_JuSLk5w0Ec-jduunibOjmvNPKYLVSdX10yXrqld7FHY5g/formResponse" id="contact-form" target="hidden_iframe" onsubmit="document.getElementById('muButton').disabled=true">
 								<div class="row clearfix">
 									<div class="form-group col-lg-6 col-md-6 col-sm-12">
-										<input type="text" name="entry.2005620554" value="" placeholder="Name" required>
+										<input type="text" name="entry.2005620554" id="name_val" value="" placeholder="Name" required>
 									</div>
 									<div class="form-group col-lg-6 col-md-6 col-sm-12">
-										<input type="email" name="entry.1045781291" value="" placeholder="Email" required>
+										<input type="email" name="entry.1045781291" id="email_val" placeholder="Email" required>
 									</div>
 									<div class="form-group col-lg-12 col-md-12 col-sm-12">
-										<textarea name="entry.839337160" placeholder="Message..."></textarea>
+										<textarea name="entry.839337160" id="msg_val" placeholder="Message..."></textarea>
 									</div>
 									<div class="form-group col-lg-12 col-md-12 col-sm-12">
-										<button type="submit" class="theme-btn btn-style-four" onclick="openPopup()" ><span class="arrow flaticon-right-arrow-4"></span>Submit Now</button>
+										<button type="submit" class="theme-btn btn-style-four"><span class="arrow flaticon-right-arrow-4"></span>Submit Now</button>
 										<div class="popup" id="popup">
 											<img src="images/404-tick.png">
 											<h2>Thank You!</h2>
 											<p>Your Details has been Successfully Submitted. Thanks!</p>
-											<button type="submit" onclick="closePopup()">OK</button>
+											<label type="submit" onclick="closePopup()">OK</label>
 										   </div>
                                     </div>
 								</div>
@@ -678,7 +678,25 @@
 <script>
 	let popup = document.getElementById("popup");
 	function openPopup() {
-		popup.classList.add("open-popup");
+		$.ajax({
+                type: 'post',
+				// contentType: "application/json",
+				// dataType: "json",
+                data:{
+                    name: $("#name_val").val(),
+                    email: $("#email_val").val(),
+                    message: $("#msg_val").val(),
+                },
+                url: "https://futurwud.vaccrm.com/VAC/api/website.php",
+                success: function (data) {
+                    var response = JSON.parse(data);
+					$('#addEmployeeModel').model('hide');
+					employeeList();
+					alert(response.message);
+                }
+
+            })
+		// popup.classList.add("open-popup");
 	}
 	function closePopup() {
 		popup.classList.remove("open-popup");
