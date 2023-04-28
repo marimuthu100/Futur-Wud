@@ -26,6 +26,156 @@
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+
+<style>
+
+#enquiry-form h2 {
+margin-top: 0;
+color: #350303f0;
+margin-left: 50px;
+}
+
+#enquiry-form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  margin-left: 22% !important;
+}
+
+#enquiry-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#enquiry-form input,
+#enquiry-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+#enquiry-form button[type="close"] {
+  background-color: #08460a;
+  color: #f0f8f3;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  font-size: 12px;
+  margin-left: 250px ;
+  margin-top: 10px;
+}
+
+
+#enquiry-form button[type="submit"] {
+  background-color: #08460a;
+  color: #f0f8f3;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 130px;
+  font-size: 17px;
+  margin-left: 125px ;
+  margin-top: 20px;
+
+}
+
+#enquiry-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+#popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+#popup h2 {
+  margin-top: 0;
+  color: #4caf50;
+}
+
+#popup p {
+  margin-bottom: 10px;
+}
+
+#popup button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#popup button:hover {
+  background-color: #3e8e41;
+}
+
+.popup {
+  width: 400px;
+  background: #10FF55;
+  border-radius: 6px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(1);
+}
+
+.popup img{
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup button {
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: #fff;
+  color: #101812;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+
 </head>
 
 <body>
@@ -331,7 +481,45 @@
     		<!--Sec Title-->
     		<div class="sec-title">
 				<h2>Welcome to <span class="theme_color">FuturWud</span></h2>
+				<div class=""?>
+				</div>
+				<div class="fixed-bottom">
+					<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+					onload="if(submitted)  {window.location.reload}"></iframe>
+					<form id="enquiry-form" method="post" action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSdT_JuSLk5w0Ec-jduunibOjmvNPKYLVSdX10yXrqld7FHY5g/formResponse" id="enquiry-form" target="hidden_iframe" onsubmit="document.getElementById('success-message').disabled=true">
+						<div class="sec-title">
+							<h2><span class="theme_color"></span> ENQUIRY FORM </h2>
+							<button type="close" id="close-btn" onclick="closeForm()">Close</button>
+
+						<div>
+						  <label for="name">Name:</label>
+						  <input type="text" name="entry.2005620554"  id="name_val" value="" placeholder="Name" required>
+						</div>
+						<div>
+						  <label for="email">Email:</label>
+						  <input type="email" name="entry.1045781291"  id="email_val" value="" placeholder="Email" required>
+						</div>
+						<div>
+						  <label for="message">Message:</label>
+						  <textarea name="entry.839337160" id="msg_val" placeholder="Message..."></textarea>
+						</div>
+						<!-- <button type="submit" id="submit-btn" onclick="submitedForm()">Submit</button> -->
+						
+					  </form>
+					  <div class="form-group col-lg-12 col-md-12 col-sm-12">
+						<button type="submit" onclick="openPopup()"
+							class="theme-btn btn-style-four"><span
+								class="arrow flaticon-right-arrow-4"></span>Submit Now</button>
+						<div class="popup" id="popup">
+							<div id="popup_content"></div>
+							<label type="submit" onclick="closePopup()">OK</label>
+						</div>
+					</div>
+					</form>  
+				</div>
+			    </div>
 			</div>
+		</div>		
 			<div class="row clearfix">
 				
 				<!--Image Column-->
@@ -1609,15 +1797,57 @@
 	  }
 	});
   </script>-->
+  <script>
+	const form = document.getElementById('enquiry-form');
+const popup = document.getElementById('popup');
+const closeButton = document.getElementById('enquiry-form');
 
-  <script src="https://unpkg.com/kursor"></script>
-    <script>
-        new kursor({
-            type: 1,
-		removeDefaultCursor: false,
-		color: "#01713c"
-        });
-    </script>
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  if (form.checkValidity()) {
+    form.reset();
+    showPopup();
+  }
+});
+
+function showPopup() {
+   document.getElementById("enquiry-form");
+  successMessage.style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("enquiry-form").style.display = "none";
+  const successMessage = document.getElementById("success-message");
+  successMessage.style.display = "none";
+}
+
+let popup = document.getElementById("popup");
+	function openPopup() {
+		$.ajax({
+                type: 'post',
+				// contentType: "application/json",
+				// dataType: "json",
+                data:{
+                    name: $("#name_val").val(),
+                    email: $("#email_val").val(),
+                    message: $("#msg_val").val(),
+                },
+                url: "https://futurwud.vaccrm.com/VAC/api/website.php",
+                success: function (data) {
+                    var response = JSON.parse(data);
+					$('#addEmployeeModel').model('hide');
+					employeeList();
+					alert(response.message);
+                }
+
+            })
+		// popup.classList.add("open-popup");
+	}
+	function closePopup() {
+		popup.classList.remove("open-popup");
+	}
+
+  </script>
 
 <script src="js/jquery.js"></script>
 <script src="js/popper.min.js"></script>
