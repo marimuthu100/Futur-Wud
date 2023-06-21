@@ -28,153 +28,164 @@
 <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
 
 <style>
+	.ml-auto,
+	.mx-auto {
+		margin-inline: auto !important;
+	}
 
-#enquiry-form h2 {
-margin-top: 0;
-color: #350303f0;
-margin-left: 50px;
+	.nav-link {
+		padding: 0px;
+	}
+
+	.contain-mainpage {
+		max-width: 1450px;
+	}
+
+	.contain-event {
+		max-width: 1230px;
+	}
+
+	.testimony-event {
+		max-width: 1330px;
+	}
+
+	@media only screen and (max-width: 767px) {
+		.navbar {
+			padding: 0px;
+		}
+	}
+
+	.times_logo {
+		width: 150px;
+		border-radius: 5px;
+	}
+
+	.header-logo-padding {
+		/*  padding: 19px 15px 2px 15px;*/
+		padding: 13px 15px 2px 15px;
+	}
+
+	.navbar_mobile {
+		margin-top: 10px !important;
+	}
+
+	.wiki-logo {
+		height: 45px;
+	}
+
+	@media only screen and (max-width: 767px) {
+		.top-header ul {
+			text-align: left;
+		}
+		.times_logo {
+			width: 65px;
+			border-radius: 5px;
+		}
+		.wiki-logo {
+			height: 22px;
+		}
+		.header-logo-padding {
+			padding: 0px 0px 2px 0px;
+		}
+		.apply-now-btn2 {
+			padding: 4px 3px;
+			font-size: 8px;
+		}
+		.social-links li i {
+			height: 20px;
+			width: 20px;
+			line-height: 20px;
+		}
+		.social-links li {
+			margin-left: 3px;
+		}
+		.top-header ul {
+			display: inline-block;
+		}
+		.navbar_mobile {
+			margin-top: 0px !important;
+		}
+		.top-header ul li a {
+			font-size: 9px;
+		}
+		.pro_ug {
+			padding-left: 0px;
+		}
+		.pro_ug li {
+			text-align: left;
+		}
+		.pro_pg {
+			padding-left: 20px;
+		}
+		.pro_pg li {
+			text-align: left;
+		}
+	}
+
+	.blink_img {
+		animation: blinker 2s linear infinite;
+	}
+
+	@keyframes blinker {
+		50% {
+			opacity: 0;
+		}
+	}
+
+	@keyframes blin {
+		50% {
+			opacity: 0;
+		}
+	}
+
+	.top-header ul li a {
+		color: #ffffff !important;
+	}
+	
+	#feedback a {
+display: block;
+background: #0f5802;
+border-radius: 5px;
+height: 52px;
+width: 225px;
+color: #000;
+font-family: "Open Sans",sans-serif;
+font-size: 17px;
+font-weight: bold;
+text-decoration: none;
+padding-top:15px;
+margin-left: 80%;
+text-align: center;
 }
 
-#enquiry-form {
-  background-color: #f5f5f5;
-  padding: 20px;
+a, a:hover, .btn {
+transition: .5s;
+-webkit-transition: .5s;
+text-decoration: none;
+}
+
+button {
+  background-color: #1B458F;
+  color: white;
+  padding: 10px 20px;
+  border: none;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  width: 400px;
-  margin-left: 22% !important;
-}
-
-#enquiry-form label {
-  display: block;
-  margin-bottom: 5px;
+  cursor: pointer;
+  font-size: 16px;
   font-weight: bold;
 }
 
-#enquiry-form input,
-#enquiry-form textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  margin-bottom: 10px;
+button:hover {
+  background-color: #2c3e50;
 }
-
-#enquiry-form button[type="close"] {
-  background-color: #08460a;
-  color: #f0f8f3;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100px;
-  font-size: 12px;
-  margin-left: 250px ;
-  margin-top: 10px;
-}
-
-
-#enquiry-form button[type="submit"] {
-  background-color: #08460a;
-  color: #f0f8f3;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 130px;
-  font-size: 17px;
-  margin-left: 125px ;
-  margin-top: 20px;
-
-}
-
-#enquiry-form button[type="submit"]:hover {
-  background-color: #3e8e41;
-}
-
-#popup {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
-}
-
-#popup h2 {
-  margin-top: 0;
-  color: #4caf50;
-}
-
-#popup p {
-  margin-bottom: 10px;
-}
-
-#popup button {
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#popup button:hover {
-  background-color: #3e8e41;
-}
-
-.popup {
-  width: 400px;
-  background: #10FF55;
-  border-radius: 6px;
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%,-50%) scale(0.1);
-  text-align: center;
-  padding: 0 30px 30px;
-  color: #333;
-  visibility: hidden;
-  transition: transform 0.4s, top 0.4s;
-}
-
-.open-popup{
-  visibility: visible;
-  top: 50%;
-  transform: translate(-50%,-50%) scale(1);
-}
-
-.popup img{
-  width: 100px;
-  margin-top: -50px;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.popup h2 {
-  font-size: 38px;
-  font-weight: 500;
-  margin: 30px 0 10px;
-}
-
-.popup button {
-  width: 100%;
-  margin-top: 50px;
-  padding: 10px 0;
-  background: #fff;
-  color: #101812;
-  border: 0;
-  outline: none;
+a {
   font-size: 18px;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  color: #1B458F;
 }
+
 
 </style>
+
 
 </head>
 
@@ -476,50 +487,60 @@ margin-left: 50px;
     
     <!--Welcome Section-->
     <section class="welcome-section">
-    
-    	<div class="auto-container">
-    		<!--Sec Title-->
-    		<div class="sec-title">
-				<h2>Welcome to <span class="theme_color">FuturWud</span></h2>
-				<div class=""?>
-				</div>
-				<div class="fixed-bottom">
-					<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-					onload="if(submitted)  {window.location.reload}"></iframe>
-					<form id="enquiry-form" method="post" action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSdT_JuSLk5w0Ec-jduunibOjmvNPKYLVSdX10yXrqld7FHY5g/formResponse" id="enquiry-form" target="hidden_iframe" onsubmit="document.getElementById('success-message').disabled=true">
-						<div class="sec-title">
-							<h2><span class="theme_color"></span> ENQUIRY FORM </h2>
-							<button type="close" id="close-btn" onclick="closeForm()">Close</button>
-
-						<div>
-						  <label for="name">Name:</label>
-						  <input type="text" name="entry.2005620554"  id="name_val" value="" placeholder="Name" required>
-						</div>
-						<div>
-						  <label for="email">Email:</label>
-						  <input type="email" name="entry.1045781291"  id="email_val" value="" placeholder="Email" required>
-						</div>
-						<div>
-						  <label for="message">Message:</label>
-						  <textarea name="entry.839337160" id="msg_val" placeholder="Message..."></textarea>
-						</div>
-						<!-- <button type="submit" id="submit-btn" onclick="submitedForm()">Submit</button> -->
-						
-					  </form>
-					  <div class="form-group col-lg-12 col-md-12 col-sm-12">
-						<button type="submit" onclick="openPopup()"
-							class="theme-btn btn-style-four"><span
-								class="arrow flaticon-right-arrow-4"></span>Submit Now</button>
-						<div class="popup" id="popup">
-							<div id="popup_content"></div>
-							<label type="submit" onclick="closePopup()">OK</label>
+		<div id="feedback">
+			<a href="#" data-toggle="modal" data-target="#popupalert">Enquiry Form</a>
+		</div>
+		
+			<div id="popupalert" class="modal fade" role="dialog" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+								</div>
+								<div class="modal-body" style="margin:20px;">
+									<h3 style="color:#1B458F" class="text-center">Enquiry Form</h3>
+									<hr class="m-0">
+									<form action="process-enquiry.php" id="enquiry-form" class="validate" method="post">
+										<input value="" name="utm_source" type="hidden" />
+										<input value="" name="utm_medium" type="hidden" />
+										<input value="" name="utm_campaign" type="hidden" />
+										<input value="" name="utm_term" type="hidden" />
+										<input value="" name="utm_content" type="hidden" />
+										<input value="" name="ref" type="hidden" />
+					
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="text" placeholder="Name" required data-validate="required" name="name" class="form-control" />
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="email" placeholder="Email" required class="form-control" data-validate="required, email" name="email">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<textarea placeholder="Message" required class="form-control" data-validate="required" name="message"></textarea>
+												</div>
+											</div>
+										</div>
+					
+										<div class="clear-fix"></div>
+										<div class="position applynow text-center">
+											<button style="background:#1B458F;color:#fff;" class="btn btn-block" type="submit">SUBMIT</button>
+											<br><p class="font12">*All Fields are Mandatory</p>
+										</div>
+									</form>
+					
+					
+								</div>
+							</div>
 						</div>
 					</div>
-					</form>  
-				</div>
-			    </div>
 			</div>
-		</div>		
+		</div>
+	</section>
 			<div class="row clearfix">
 				
 				<!--Image Column-->
@@ -1797,10 +1818,15 @@ margin-left: 50px;
 	  }
 	});
   </script>-->
-  <script>
-	const form = document.getElementById('enquiry-form');
-const popup = document.getElementById('popup');
-const closeButton = document.getElementById('enquiry-form');
+
+ <script>
+	$(window).on('load', function() {
+  $('#popupalert').modal('show');
+});
+
+  const form = document.getElementById('enquiry-form');
+const successMessage = document.getElementById('success-message');
+const closeButton = document.getElementById('close-button');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -1811,43 +1837,51 @@ form.addEventListener('submit', function(event) {
 });
 
 function showPopup() {
-   document.getElementById("enquiry-form");
-  successMessage.style.display = "block";
+  form.style.display = 'none';
+  successMessage.style.display = 'block';
 }
 
-function closeForm() {
-  document.getElementById("enquiry-form").style.display = "none";
-  const successMessage = document.getElementById("success-message");
-  successMessage.style.display = "none";
+function closePopup() {
+  form.style.display = 'block';
+  successMessage.style.display = 'none';
 }
 
-let popup = document.getElementById("popup");
-	function openPopup() {
-		$.ajax({
-                type: 'post',
-				// contentType: "application/json",
-				// dataType: "json",
-                data:{
-                    name: $("#name_val").val(),
-                    email: $("#email_val").val(),
-                    message: $("#msg_val").val(),
-                },
-                url: "https://futurwud.vaccrm.com/VAC/api/website.php",
-                success: function (data) {
-                    var response = JSON.parse(data);
-					$('#addEmployeeModel').model('hide');
-					employeeList();
-					alert(response.message);
-                }
+const popupButton = document.getElementById('popup-button');
+popupButton.addEventListener('click', function(event) {
+  event.preventDefault();
+  openPopup();
+});
 
-            })
-		// popup.classList.add("open-popup");
-	}
-	function closePopup() {
-		popup.classList.remove("open-popup");
-	}
+function openPopup() {
+  const name = document.getElementById('name_val').value;
+  const email = document.getElementById('email_val').value;
+  const message = document.getElementById('msg_val').value;
+  
+  const data = {
+    name: name,
+    email: email,
+    message: message,
+  };
+  
+  fetch("https://docs.google.com/forms/u/3/d/e/1FAIpQLSdT_JuSLk5w0Ec-jduunibOjmvNPKYLVSdX10yXrqld7FHY5g/formResponse" , {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert(data.message);
+    closeButton.click();
+  })
+  .catch(error => {
+    console.error(error);
+    alert('An error occurred while sending your message. Please try again later.');
+  });
+}
 
-  </script>
+</script>
 
 <script src="js/jquery.js"></script>
 <script src="js/popper.min.js"></script>
